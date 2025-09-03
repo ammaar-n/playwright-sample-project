@@ -7,7 +7,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe("Persistence", () => {
-  test("should persist its data", async ({ page }) => {
+  test("should persist its data", {tag: ['@T47586']}, async ({ page }) => {
     const newTodo = page.getByPlaceholder("What needs to be done?");
 
     for (const item of TODO_ITEMS.slice(0, 2)) {

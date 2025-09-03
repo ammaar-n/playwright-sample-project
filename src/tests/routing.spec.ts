@@ -16,7 +16,7 @@ test.describe("Routing", () => {
     await checkTodosInLocalStorage(page, TODO_ITEMS[0]);
   });
 
-  test("should allow me to display active items", async ({ page }) => {
+  test("should allow me to display active items", {tag: ['@T47584']}, async ({ page }) => {
     const todoItem = page.getByTestId("todo-item");
     await page.getByTestId("todo-item").nth(1).getByRole("checkbox").check();
 

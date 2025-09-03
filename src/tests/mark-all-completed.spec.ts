@@ -15,7 +15,7 @@ test.describe("Mark all as completed", () => {
     await checkNumberOfTodosInLocalStorage(page, 3);
   });
 
-  test("should allow me to mark all items as completed", async ({ page }) => {
+  test("should allow me to mark all items as completed", {tag: ['@T47580']}, async ({ page }) => {
     await page.getByLabel("Mark all as complete").check();
     
     await expect(page.getByTestId("todo-item")).toHaveClass([

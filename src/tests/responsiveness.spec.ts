@@ -6,14 +6,14 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe("Responsiveness", () => {
-  test("should display correctly on mobile", async ({ page }) => {
+  test("should display correctly on mobile", {tag: ['@T47581']}, async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 667 });
     await createDefaultTodos(page);
     const todoItems = page.getByTestId("todo-item");
     await expect(todoItems).toHaveCount(3);
   });
 
-  test("should display correctly on tablet", async ({ page }) => {
+  test("should display correctly on tablet", {tag: ['@T47587']}, async ({ page }) => {
     await page.setViewportSize({ width: 768, height: 1024 });
     await createDefaultTodos(page);
     const todoItems = page.getByTestId("todo-item");

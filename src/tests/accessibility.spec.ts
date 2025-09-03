@@ -6,7 +6,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe("Accessibility", () => {
-  test("should have no accessibility violations", async ({ page }) => {
+  test("should have no accessibility violations", {tag: ['@T47583']}, async ({ page }) => {
     await createDefaultTodos(page);
     const accessibilityScanResults = await page.accessibility.snapshot();
     expect(accessibilityScanResults).toBeDefined();
