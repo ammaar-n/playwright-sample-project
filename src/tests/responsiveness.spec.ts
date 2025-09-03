@@ -6,7 +6,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe("Responsiveness", () => {
-  test("should display correctly on mobile", {tag: ['@T47581']}, async ({ page }) => {
+  test("should display correctly on mobile", async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 667 });
     await createDefaultTodos(page);
     const todoItems = page.getByTestId("todo-item");

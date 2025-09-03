@@ -9,7 +9,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe("Item", () => {
-  test("should allow me to mark items as complete", {tag: ['@T47588']}, async ({ page }) => {
+  test("should allow me to mark items as complete", async ({ page }) => {
     const newTodo = page.getByPlaceholder("What needs to be done?");
     
     for (const item of TODO_ITEMS.slice(0, 2)) {
